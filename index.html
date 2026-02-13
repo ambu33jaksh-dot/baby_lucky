@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My FirstValentine ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Password Screen -->
+    <div id="passwordScreen" class="password-screen">
+        <div class="password-container">
+            <h2>🔒 This is a secret message just for you!</h2>
+            <p>Enter the password to unlock your surprise:</p>
+            <input type="password" id="passwordInput" placeholder="WHAT DO I CALL YOU BABY?">
+            <button onclick="checkPassword()">Unlock 💝</button>
+            <p id="passwordError" class="error-message">Wrong password! Try again 💔</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="hidden">
+        <!-- Floating Hearts Background -->
+        <div class="hearts-container"></div>
+        
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">To My Amazing Girlfriend</h1>
+            <p class="subtitle">You make every day feel like Valentine's Day</p>
+        </header>
+
+        <!-- Quotes Section -->
+        <section class="quotes-section">
+            <div class="quote-container">
+                <div class="quote-card">
+                    <p class="quote-text" id="quoteText">Loading beautiful words...</p>
+                    <button class="next-quote-btn" onclick="showNextQuote()">Next Quote 💕</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proposal Section -->
+        <section class="proposal-section">
+            <div class="proposal-card">
+                <h2 class="proposal-title">Will you be my Valentine?QUEEN 💕</h2>
+                <div class="proposal-buttons">
+                    <button class="btn-yes" onclick="sayYes()">YES! 💖</button>
+                    <button class="btn-no" id="noButton" onclick="moveNoButton()">No 💔</button>
+                </div>
+                <div id="cryingBear" class="crying-bear hidden">
+                    <p>😭💔</p>
+                    <p>Why would you break my heart like this?</p>
+                </div>
+                <div id="happyMessage" class="happy-message hidden">
+                    <h3>YAY! I love you so much! 💕💖💝</h3>
+                    <p>You've made me the happiest person alive!</p>
+                    <div class="celebration">🎉💕🌹💖✨</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Playful Tease Section -->
+        <section class="tease-section">
+            <div class="tease-card">
+                <div class="tease-emoji">😏</div>
+                <h2 class="tease-title">A Little Secret... 🤫</h2>
+                <div class="tease-content">
+                    <p class="tease-buildup">You know, I was thinking about beauty the other day...</p>
+                    <p class="tease-pause">And I realized something amazing...</p>
+                    <p class="tease-dramatic">Your mom is absolutely gorgeous! 😍</p>
+                    <div class="tease-wait">...</div>
+                    <p class="tease-reveal"><strong>BUT...</strong> 🎭</p>
+                    <p class="tease-punchline">She's just the PREVIEW! You're the MAIN FEATURE! 🎬✨</p>
+                    <p class="tease-explanation">Like mother like daughter, but you're the upgraded version with all the best features! 💎</p>
+                    <div class="tease-comparison">
+                        <div class="tease-mom">
+                            <span>👩‍🦰 Mom: Beautiful (Classic Edition)</span>
+                        </div>
+                        <div class="tease-arrow">↓</div>
+                        <div class="tease-girlfriend">
+                            <span>👸 You: STUNNING (Premium Limited Edition!) ✨</span>
+                        </div>
+                    </div>
+                    <p class="tease-conclusion">Your mom created a masterpiece, but you're the entire art gallery! 🖼️💕</p>
+                </div>
+                <button class="tease-forgive-btn" onclick="showTeaseMessage()">Forgive me? 🥺💝</button>
+                <div id="teaseForgiveness" class="tease-forgiveness hidden">
+                    <h3>YAY! I knew you'd understand! 😊</h3>
+                    <p>You're not just beautiful, you're also amazingly understanding! That's why I love you! ❤️</p>
+                    <div class="tease-hearts">💕💖💗💝</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rose Section -->
+        <section class="rose-section">
+            <div class="rose-card">
+                <div class="rose-container">
+                    <div class="rose">🌹</div>
+                </div>
+                <h2 class="rose-title">You're My Beautiful Rose! 🌹💕</h2>
+                <div class="rose-comparison">
+                    <div class="rose-item">
+                        <span class="rose-emoji">🌹</span>
+                        <div class="rose-content">
+                            <h3>Like a Rose Bud</h3>
+                            <p>You start off shy and adorable, but when you bloom, you're absolutely breathtaking!</p>
+                        </div>
+                    </div>
+                    <div class="rose-item">
+                        <span class="rose-emoji">🌹</span>
+                        <div class="rose-content">
+                            <h3>Petals Soft as Silk</h3>
+                            <p>Your skin is softer than rose petals, and your touch is more gentle than morning dew!</p>
+                        </div>
+                    </div>
+                    <div class="rose-item">
+                        <span class="rose-emoji">🌹</span>
+                        <div class="rose-content">
+                            <h3>Beautiful Color</h3>
+                            <p>Roses come in red, pink, and white, but you have all the beautiful colors of love in your personality!</p>
+                        </div>
+                    </div>
+                    <div class="rose-item">
+                        <span class="rose-emoji">🌹</span>
+                        <div class="rose-content">
+                            <h3>Sweet Fragrance</h3>
+                            <p>Roses smell amazing, but your presence is the most intoxicating fragrance in the world!</p>
+                        </div>
+                    </div>
+                    <div class="rose-item">
+                        <span class="rose-emoji">🌹</span>
+                        <div class="rose-content">
+                            <h3>Thorns for Protection</h3>
+                            <p>Roses have thorns to protect themselves, and you have your sassy comebacks to protect your heart (which I love!)</p>
+                        </div>
+                    </div>
+                    <div class="rose-item">
+                        <span class="rose-emoji">🌹</span>
+                        <div class="rose-content">
+                            <h3>Grows Stronger</h3>
+                            <p>Roses grow stronger with care, and our love grows stronger every day with your amazing presence!</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="rose-conclusion">Roses are beautiful, but they wither. You're eternal beauty that blooms brighter every day in my heart! 🌹❤️</p>
+            </div>
+        </section>
+
+        <!-- Teddy Bear Section -->
+        <section class="teddy-bear-section">
+            <div class="teddy-bear-card">
+                <div class="teddy-bear-container">
+                    <div class="teddy-bear">🧸</div>
+                </div>
+                <h2 class="teddy-title">You're My Human Teddy Bear! 🧸💕</h2>
+                <div class="teddy-comparison">
+                    <div class="comparison-item">
+                        <span class="teddy-emoji">🧸</span>
+                        <p><strong>Teddy Bear:</strong> Soft, cuddly, and always there for hugs</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="girlfriend-emoji">💕</span>
+                        <p><strong>My Girlfriend:</strong> Softer, cuddlier, and gives the BEST hugs in the universe!</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="teddy-emoji">🧸</span>
+                        <p><strong>Teddy Bear:</strong> Listens to all my problems silently</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="girlfriend-emoji">💕</span>
+                        <p><strong>My Girlfriend:</strong> Actually has good advice (and tells me when I'm being stupid!)</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="teddy-emoji">🧸</span>
+                        <p><strong>Teddy Bear:</strong> Perfect for sleeping next to</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="girlfriend-emoji">💕</span>
+                        <p><strong>My Girlfriend:</strong> Steals all the blankets but I wouldn't have it any other way!</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="teddy-emoji">🧸</span>
+                        <p><strong>Teddy Bear:</strong> Never gets mad at me</p>
+                    </div>
+                    <div class="comparison-item">
+                        <span class="girlfriend-emoji">💕</span>
+                        <p><strong>My Girlfriend:</strong> Gets mad but makes up for it with amazing makeup hugs!</p>
+                    </div>
+                </div>
+                <p class="teddy-conclusion">Conclusion: You're like a teddy bear, but 1000x better because you're real, you love me back, and you don't collect dust! 🧸❤️</p>
+            </div>
+        </section>
+
+        <!-- Love Letter Section -->
+        <section class="love-letter-section">
+            <div class="love-letter">
+                <h2>A Little Love Letter</h2>
+                <p>My dearest Lucky,</p>
+                <p>Every moment with you feels like a beautiful dream come true. Your smile lights up my world, your laugh is my favorite sound, and your love is the greatest gift I've ever received.</p>
+                <p>You're not just my girlfriend, you're my best friend, my confidant, and my everything. I love you more than words can express.</p>
+                <p>Happy Valentine's Day to the most amazing person in my life!<br>
+                    I love You soo much KUNTHANI
+                </p>
+                <p class="signature">Forever yours,<br>Your loving ARROW JAKSH ❤️</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with all my love for you 💕</p>
+            <p>Happy Valentine's Day 2026</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
